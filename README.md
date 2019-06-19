@@ -31,19 +31,6 @@ Execute from the projects root folder:
 
     $ cordova plugin add cordova-plugin-background-enable
 
-Or install a specific version:
-
-    $ cordova plugin add de.appplant.cordova.plugin.background-mode@VERSION
-
-Or install the latest head version:
-
-    $ cordova plugin add https://github.com/katzer/cordova-plugin-background-enable.git
-
-Or install from local source:
-
-    $ cordova plugin add cordova-plugin-background-enable --searchpath <path>
-
-
 ## Usage
 The plugin creates the object `cordova.plugins.backgroundEnable` and is accessible after the *deviceready* event has been fired.
 
