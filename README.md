@@ -1,9 +1,9 @@
 
-<p align="left">
-    <b><a href="https://github.com/katzer/cordova-plugin-background-enable/tree/example">SAMPLE APP</a> :point_right:</b>
-</p>
+# Cordova Background Plugin
 
-Cordova Background Plugin [![npm version](https://badge.fury.io/js/cordova-plugin-background-enable.svg)](http://badge.fury.io/js/cordova-plugin-background-enable) [![Build Status](https://travis-ci.org/katzer/cordova-plugin-background-enable.svg?branch=master)](https://travis-ci.org/katzer/cordova-plugin-background-enable) [![codebeat badge](https://codebeat.co/badges/49709283-b313-4ced-8630-f520baaec7b5)](https://codebeat.co/projects/github-com-katzer-cordova-plugin-background-enable)
+Forked and edited to work from (https://github.com/katzer/cordova-plugin-background-mode)
+
+[![npm version](https://badge.fury.io/js/cordova-plugin-background-enable.svg)](http://badge.fury.io/js/cordova-plugin-background-enable)
 =========================
 
 Plugin for the [Cordova][cordova] framework to perform infinite background execution.
@@ -21,8 +21,6 @@ Use the plugin by your own risk!
 - __Android/Amazon FireOS__
 - __Browser__
 - __iOS__
-- __Windows__ _(see #222)_
-
 
 ## Installation
 The plugin can be installed via [Cordova-CLI][CLI] and is publicly available on [NPM][npm].
@@ -167,6 +165,9 @@ cordova.plugins.backgroundEnable.on('activate', function() {
 
 __Note:__ Calling the method led to increased resource and power consumption.
 
+<p align="left">
+    <b><a href="https://github.com/bloodf/cordova-plugin-background-enable/tree/master/example">SAMPLE APP</a> :point_right:</b>
+</p>
 
 ## Contributing
 
