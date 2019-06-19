@@ -1,9 +1,9 @@
 
 <p align="left">
-    <b><a href="https://github.com/katzer/cordova-plugin-background-mode/tree/example">SAMPLE APP</a> :point_right:</b>
+    <b><a href="https://github.com/katzer/cordova-plugin-background-enable/tree/example">SAMPLE APP</a> :point_right:</b>
 </p>
 
-Cordova Background Plugin [![npm version](https://badge.fury.io/js/cordova-plugin-background-mode.svg)](http://badge.fury.io/js/cordova-plugin-background-mode) [![Build Status](https://travis-ci.org/katzer/cordova-plugin-background-mode.svg?branch=master)](https://travis-ci.org/katzer/cordova-plugin-background-mode) [![codebeat badge](https://codebeat.co/badges/49709283-b313-4ced-8630-f520baaec7b5)](https://codebeat.co/projects/github-com-katzer-cordova-plugin-background-mode)
+Cordova Background Plugin [![npm version](https://badge.fury.io/js/cordova-plugin-background-enable.svg)](http://badge.fury.io/js/cordova-plugin-background-enable) [![Build Status](https://travis-ci.org/katzer/cordova-plugin-background-enable.svg?branch=master)](https://travis-ci.org/katzer/cordova-plugin-background-enable) [![codebeat badge](https://codebeat.co/badges/49709283-b313-4ced-8630-f520baaec7b5)](https://codebeat.co/projects/github-com-katzer-cordova-plugin-background-enable)
 =========================
 
 Plugin for the [Cordova][cordova] framework to perform infinite background execution.
@@ -29,7 +29,7 @@ The plugin can be installed via [Cordova-CLI][CLI] and is publicly available on 
 
 Execute from the projects root folder:
 
-    $ cordova plugin add cordova-plugin-background-mode
+    $ cordova plugin add cordova-plugin-background-enable
 
 Or install a specific version:
 
@@ -37,19 +37,19 @@ Or install a specific version:
 
 Or install the latest head version:
 
-    $ cordova plugin add https://github.com/katzer/cordova-plugin-background-mode.git
+    $ cordova plugin add https://github.com/katzer/cordova-plugin-background-enable.git
 
 Or install from local source:
 
-    $ cordova plugin add cordova-plugin-background-mode --searchpath <path>
+    $ cordova plugin add cordova-plugin-background-enable --searchpath <path>
 
 
 ## Usage
-The plugin creates the object `cordova.plugins.backgroundMode` and is accessible after the *deviceready* event has been fired.
+The plugin creates the object `cordova.plugins.backgroundEnable` and is accessible after the *deviceready* event has been fired.
 
 ```js
 document.addEventListener('deviceready', function () {
-    // cordova.plugins.backgroundMode is now available
+    // cordova.plugins.backgroundEnable is now available
 }, false);
 ```
 
@@ -57,23 +57,23 @@ document.addEventListener('deviceready', function () {
 The plugin is not enabled by default. Once it has been enabled the mode becomes active if the app moves to background.
 
 ```js
-cordova.plugins.backgroundMode.enable();
+cordova.plugins.backgroundEnable.enable();
 // or
-cordova.plugins.backgroundMode.setEnabled(true);
+cordova.plugins.backgroundEnable.setEnabled(true);
 ```
 
 To disable the background mode:
 ```js
-cordova.plugins.backgroundMode.disable();
+cordova.plugins.backgroundEnable.disable();
 // or
-cordova.plugins.backgroundMode.setEnabled(false);
+cordova.plugins.backgroundEnable.setEnabled(false);
 ```
 
 ### Check if running in background
 Once the plugin has been enabled and the app has entered the background, the background mode becomes active.
 
 ```js
-cordova.plugins.backgroundMode.isActive(); // => boolean
+cordova.plugins.backgroundEnable.isActive(); // => boolean
 ```
 
 A non-active mode means that the app is in foreground.
@@ -82,12 +82,12 @@ A non-active mode means that the app is in foreground.
 The plugin fires an event each time its status has been changed. These events are `enable`, `disable`, `activate`, `deactivate` and `failure`.
 
 ```js
-cordova.plugins.backgroundMode.on('EVENT', function);
+cordova.plugins.backgroundEnable.on('EVENT', function);
 ```
 
 To remove an event listeners:
 ```js
-cordova.plugins.backgroundMode.un('EVENT', function);
+cordova.plugins.backgroundEnable.un('EVENT', function);
 ```
 
 
@@ -97,30 +97,30 @@ cordova.plugins.backgroundMode.un('EVENT', function);
 Android allows to programmatically move from foreground to background or vice versa.
 
 ```js
-cordova.plugins.backgroundMode.moveToBackground();
+cordova.plugins.backgroundEnable.moveToBackground();
 // or
-cordova.plugins.backgroundMode.moveToForeground();
+cordova.plugins.backgroundEnable.moveToForeground();
 ```
 
 ### Back button
 Override the back button on Android to go to background instead of closing the app.
 
 ```js
-cordova.plugins.backgroundMode.overrideBackButton();
+cordova.plugins.backgroundEnable.overrideBackButton();
 ```
 
 ### Recent task list
 Exclude the app from the recent task list works on Android 5.0+.
 
 ```js
-cordova.plugins.backgroundMode.excludeFromTaskList();
+cordova.plugins.backgroundEnable.excludeFromTaskList();
 ```
 
 ### Detect screen status
 The method works async instead of _isActive()_ or _isEnabled()_.
 
 ```js
-cordova.plugins.backgroundMode.isScreenOff(function(bool) {
+cordova.plugins.backgroundEnable.isScreenOff(function(bool) {
     ...
 });
 ```
@@ -130,9 +130,9 @@ A wake-up turns on the screen while unlocking moves the app to foreground even t
 
 ```js
 // Turn screen on
-cordova.plugins.backgroundMode.wakeUp();
+cordova.plugins.backgroundEnable.wakeUp();
 // Turn screen on and show app even locked
-cordova.plugins.backgroundMode.unlock();
+cordova.plugins.backgroundEnable.unlock();
 ```
 
 ### Notification
@@ -142,7 +142,7 @@ To indicate that the app is executing tasks in background and being paused would
 The title, text and icon for that notification can be customized as below. Also, by default the app will come to foreground when tapping on the notification. That can be changed by setting resume to false. On Android 5.0+, the color option will set the background color of the notification circle. Also on Android 5.0+, setting hidden to false will make the notification visible on lockscreen.
 
 ```js
-cordova.plugins.backgroundMode.setDefaults({
+cordova.plugins.backgroundEnable.setDefaults({
     title: String,
     text: String,
     icon: 'icon' // this will look for icon.png in platforms/android/res/drawable|mipmap
@@ -155,7 +155,7 @@ cordova.plugins.backgroundMode.setDefaults({
 
 To modify the currently displayed notification
 ```js
-cordova.plugins.backgroundMode.configure({ ... });
+cordova.plugins.backgroundEnable.configure({ ... });
 ```
 
 __Note:__ All properties are optional - only override the things you need to.
@@ -164,7 +164,7 @@ __Note:__ All properties are optional - only override the things you need to.
 In silent mode the plugin will not display a notification - which is not the default. Be aware that Android recommends adding a notification otherwise the OS may pause the app.
 
 ```js
-cordova.plugins.backgroundMode.setDefaults({ silent: true });
+cordova.plugins.backgroundEnable.setDefaults({ silent: true });
 ```
 
 
@@ -173,8 +173,8 @@ cordova.plugins.backgroundMode.setDefaults({ silent: true });
 Various APIs like playing media or tracking GPS position in background might not work while in background even the background mode is active. To fix such issues the plugin provides a method to disable most optimizations done by Android/CrossWalk.
 
 ```js
-cordova.plugins.backgroundMode.on('activate', function() {
-   cordova.plugins.backgroundMode.disableWebViewOptimizations(); 
+cordova.plugins.backgroundEnable.on('activate', function() {
+   cordova.plugins.backgroundEnable.disableWebViewOptimizations(); 
 });
 ```
 

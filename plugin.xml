@@ -2,20 +2,20 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-background-mode"
+        id="cordova-plugin-background-enable"
         version="0.7.2">
 
-    <name>BackgroundMode</name>
+    <name>BackgroundEnable</name>
 
     <description>Prevent apps from going to sleep in background.</description>
 
-    <repo>https://github.com/katzer/cordova-plugin-background-mode.git</repo>
+    <repo>https://github.com/bloodf/cordova-plugin-background-enable.git</repo>
 
     <keywords>appplant, background</keywords>
 
     <license>Apache 2.0</license>
 
-    <author>Sebastián Katzer</author>
+    <author>Heitor Ramon (Original Author: Sebastián Katzer)</author>
 
     <!-- dependencies -->
     <dependency id="cordova-plugin-device" />
@@ -27,21 +27,21 @@
     </engines>
 
     <!-- js -->
-    <js-module src="www/background-mode.js" name="BackgroundMode">
-        <clobbers target="cordova.plugins.backgroundMode" />
-        <clobbers target="plugin.backgroundMode" />
+    <js-module src="www/background-enable.js" name="BackgroundEnable">
+        <clobbers target="cordova.plugins.backgroundEnable" />
+        <clobbers target="plugin.backgroundEnable" />
     </js-module>
 
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="BackgroundMode">
-                <param name="ios-package" value="APPBackgroundMode" onload="true" />
+            <feature name="BackgroundEnable">
+                <param name="ios-package" value="APPBackgroundEnable" onload="true" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>
 
-        <config-file target="*-Info.plist" parent="UIBackgroundModes">
+        <config-file target="*-Info.plist" parent="UIBackgroundEnables">
             <array>
                 <string>audio</string>
             </array>
@@ -49,8 +49,8 @@
 
         <resource-file src="appbeep.wav" />
 
-        <header-file src="src/ios/APPBackgroundMode.h" />
-        <source-file src="src/ios/APPBackgroundMode.m" />
+        <header-file src="src/ios/APPBackgroundEnable.h" />
+        <source-file src="src/ios/APPBackgroundEnable.m" />
         <header-file src="src/ios/APPMethodMagic.h" />
         <source-file src="src/ios/APPMethodMagic.m" />
     </platform>
@@ -58,11 +58,11 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="BackgroundMode">
-                <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundMode"/>
+            <feature name="BackgroundEnable">
+                <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundEnable"/>
             </feature>
-            <feature name="BackgroundModeExt">
-                <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundModeExt"/>
+            <feature name="BackgroundEnableExt">
+                <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundEnableExt"/>
             </feature>
         </config-file>
 
@@ -79,11 +79,11 @@
         </config-file>
 
         <source-file
-            src="src/android/BackgroundMode.java"
+            src="src/android/BackgroundEnable.java"
             target-dir="src/de/appplant/cordova/plugin/background" />
 
         <source-file
-            src="src/android/BackgroundModeExt.java"
+            src="src/android/BackgroundEnableExt.java"
             target-dir="src/de/appplant/cordova/plugin/background" />
 
         <source-file
@@ -94,12 +94,12 @@
     <!-- browser -->
     <platform name="browser">
         <config-file target="config.xml" parent="/*">
-            <feature name="BackgroundMode">
-                <param name="browser-package" value="BackgroundMode"/>
+            <feature name="BackgroundEnable">
+                <param name="browser-package" value="BackgroundEnable"/>
             </feature>
         </config-file>
 
-        <js-module src="src/browser/BackgroundModeProxy.js" name="BackgroundMode.Proxy">
+        <js-module src="src/browser/BackgroundEnableProxy.js" name="BackgroundEnable.Proxy">
             <runs />
         </js-module>
     </platform>

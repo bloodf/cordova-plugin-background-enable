@@ -20,15 +20,15 @@
 */
 
 #import "APPMethodMagic.h"
-#import "APPBackgroundMode.h"
+#import "APPBackgroundEnable.h"
 #import <Cordova/CDVAvailability.h>
 
-@implementation APPBackgroundMode
+@implementation APPBackgroundEnable
 
 #pragma mark -
 #pragma mark Constants
 
-NSString* const kAPPBackgroundJsNamespace = @"cordova.plugins.backgroundMode";
+NSString* const kAPPBackgroundJsNamespace = @"cordova.plugins.backgroundEnable";
 NSString* const kAPPBackgroundEventActivate = @"activate";
 NSString* const kAPPBackgroundEventDeactivate = @"deactivate";
 
@@ -131,7 +131,7 @@ NSString* const kAPPBackgroundEventDeactivate = @"deactivate";
 - (void) stopKeepingAwake
 {
     if (TARGET_IPHONE_SIMULATOR) {
-        NSLog(@"BackgroundMode: On simulator apps never pause in background!");
+        NSLog(@"BackgroundEnable: On simulator apps never pause in background!");
     }
 
     if (audioPlayer.isPlaying) {
@@ -263,7 +263,7 @@ NSString* const kAPPBackgroundEventDeactivate = @"deactivate";
         id obj = ((id (*)(id, SEL, NSDictionary*))_imp)(self, _cmd, settings);
 
         [obj setValue:[NSNumber numberWithBool:YES]
-               forKey:[APPBackgroundMode wkProperty]];
+               forKey:[APPBackgroundEnable wkProperty]];
 
         [obj setValue:[NSNumber numberWithBool:NO]
                forKey:@"requiresUserActionForMediaPlayback"];

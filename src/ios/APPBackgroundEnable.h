@@ -22,7 +22,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Cordova/CDVPlugin.h>
 
-@interface APPBackgroundMode : CDVPlugin {
+@interface APPBackgroundEnable : CDVPlugin {
     AVAudioPlayer* audioPlayer;
     BOOL enabled;
 }

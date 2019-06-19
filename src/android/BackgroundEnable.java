@@ -35,15 +35,15 @@ import org.json.JSONObject;
 import de.appplant.cordova.plugin.background.ForegroundService.ForegroundBinder;
 
 import static android.content.Context.BIND_AUTO_CREATE;
-import static de.appplant.cordova.plugin.background.BackgroundModeExt.clearKeyguardFlags;
+import static de.appplant.cordova.plugin.background.BackgroundEnableExt.clearKeyguardFlags;
 
-public class BackgroundMode extends CordovaPlugin {
+public class BackgroundEnable extends CordovaPlugin {
 
     // Event types for callbacks
     private enum Event { ACTIVATE, DEACTIVATE, FAILURE }
 
     // Plugin namespace
-    private static final String JS_NAMESPACE = "cordova.plugins.backgroundMode";
+    private static final String JS_NAMESPACE = "cordova.plugins.backgroundEnable";
 
     // Flag indicates if the app is in background or foreground
     private boolean inBackground = false;
@@ -67,7 +67,7 @@ public class BackgroundMode extends CordovaPlugin {
         public void onServiceConnected (ComponentName name, IBinder service)
         {
             ForegroundBinder binder = (ForegroundBinder) service;
-            BackgroundMode.this.service = binder.getService();
+            BackgroundEnable.this.service = binder.getService();
         }
 
         @Override

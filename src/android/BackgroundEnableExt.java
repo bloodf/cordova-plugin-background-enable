@@ -64,7 +64,7 @@ import static android.view.WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON;
  * Implements extended functions around the main purpose
  * of infinite execution in the background.
  */
-public class BackgroundModeExt extends CordovaPlugin {
+public class BackgroundEnableExt extends CordovaPlugin {
 
     // To keep the device awake
     private PowerManager.WakeLock wakeLock;
@@ -347,7 +347,7 @@ public class BackgroundModeExt extends CordovaPlugin {
         int level = PowerManager.SCREEN_DIM_WAKE_LOCK |
                     PowerManager.ACQUIRE_CAUSES_WAKEUP;
 
-        wakeLock = pm.newWakeLock(level, "backgroundmode:wakelock");
+        wakeLock = pm.newWakeLock(level, "backgroundenable:wakelock");
         wakeLock.setReferenceCounted(false);
         wakeLock.acquire(1000);
     }

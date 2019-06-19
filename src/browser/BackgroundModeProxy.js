@@ -46,4 +46,4 @@ exports.disable = function (success, error) {
     success();
 };
 
-cordova.commandProxy.add('BackgroundMode', exports);
+cordova.commandProxy.add('BackgroundEnable', exports);

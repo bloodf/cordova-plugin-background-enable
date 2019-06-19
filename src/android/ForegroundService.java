@@ -125,7 +125,7 @@ public class ForegroundService extends Service {
     @SuppressLint("WakelockTimeout")
     private void keepAwake()
     {
-        JSONObject settings = BackgroundMode.getSettings();
+        JSONObject settings = BackgroundEnable.getSettings();
         boolean isSilent    = settings.optBoolean("silent", false);
 
         if (!isSilent) {
@@ -135,7 +135,7 @@ public class ForegroundService extends Service {
         PowerManager pm = (PowerManager)getSystemService(POWER_SERVICE);
 
         wakeLock = pm.newWakeLock(
-                PARTIAL_WAKE_LOCK, "backgroundmode:wakelock");
+                PARTIAL_WAKE_LOCK, "backgroundenable:wakelock");
 
         wakeLock.acquire();
     }
@@ -160,7 +160,7 @@ public class ForegroundService extends Service {
      */
     private Notification makeNotification()
     {
-        return makeNotification(BackgroundMode.getSettings());
+        return makeNotification(BackgroundEnable.getSettings());
     }
 
     /**
@@ -172,12 +172,12 @@ public class ForegroundService extends Service {
     private Notification makeNotification (JSONObject settings)
     {
         // use channelid for Oreo and higher
-        String CHANNEL_ID = "cordova-plugin-background-mode-id";
+        String CHANNEL_ID = "cordova-plugin-background-enable-id";
         if(Build.VERSION.SDK_INT >= 26){
         // The user-visible name of the channel.
-        CharSequence name = "cordova-plugin-background-mode";
+        CharSequence name = "cordova-plugin-background-enable";
         // The user-visible description of the channel.
-        String description = "cordova-plugin-background-moden notification";
+        String description = "cordova-plugin-background-enablen notification";
 
         int importance = NotificationManager.IMPORTANCE_LOW;
 

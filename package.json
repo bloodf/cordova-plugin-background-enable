@@ -1,9 +1,9 @@
 {
-  "name": "cordova-plugin-background-mode-2",
-  "version": "0.7.3",
+  "name": "cordova-plugin-background-enable",
+  "version": "0.7.4",
   "description": "Prevent apps from going to sleep in background.",
   "cordova": {
-    "id": "cordova-plugin-background-mode-2",
+    "id": "cordova-plugin-background-enable",
     "platforms": [
       "ios",
       "android",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bloodf/cordova-plugin-background-mode.git"
+    "url": "git+https://github.com/bloodf/cordova-plugin-background-enable.git"
   },
   "keywords": [
     "appplant",
@@ -30,16 +30,12 @@
     {
       "name": "android-sdk",
       "version": ">=16"
-    },
-    {
-      "name": "windows-sdk",
-      "version": ">=10.0.14393.0"
     }
   ],
-  "author": "Sebastián Katzer",
+  "author": "Heitor Ramon Ribeiro",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/bloodf/cordova-plugin-background-mode/issues"
+    "url": "https://github.com/bloodf/cordova-plugin-background-enable/issues"
   },
-  "homepage": "https://github.com/bloodf/cordova-plugin-background-mode#readme"
+  "homepage": "https://github.com/bloodf/cordova-plugin-background-enable#readme"
 }
