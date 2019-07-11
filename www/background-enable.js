@@ -487,6 +487,30 @@ exports._pluginInitialize = function()
     this._isActive  = this._isActive || device.platform == 'browser';
 };
 
+/**
+ * @deprecated
+ *
+ * Called when the background mode has been activated.
+ */
+exports.onactivate = function () {};
+
+/**
+ * @deprecated
+ *
+ * Called when the background mode has been deaktivated.
+ */
+exports.ondeactivate = function () {};
+
+/**
+ * @deprecated
+ *
+ * Called when the background mode could not been activated.
+ *
+ * @param {Integer} errorCode
+ *      Error code which describes the error
+ */
+exports.onfailure = function () {};
+
 // Called before 'deviceready' listener will be called
 channel.onCordovaReady.subscribe(function()
 {
